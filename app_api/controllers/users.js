@@ -74,7 +74,7 @@ const userChangePws = (req, res) => {
                     } else {
                         res
                         .status(200)
-                        .json({ "message": msg, "data": `密碼已更新為(${pws})` });
+                        .json({ "message": msg, "data": `密碼已更新為：${pws}` });
             
                     }
                 })
@@ -170,11 +170,11 @@ const userForgetPws = (req, res) => {
                     } else {
                         //const pws = crypto.randomBytes(5).toString('hex').toUpperCase();
                         const pws = "family168";
-                        ctrlMail.mailOfForgetPws(req, res, pws, row.name);
+                        //ctrlMail.mailOfForgetPws(req, res, pws, row.name);
                         //const token = user.generateJwt();
-                        // res
-                        //     .status(200)
-                        //     .json({ "message": "", "data": "" });
+                        res
+                            .status(200)
+                            .json({ "message": "success", "data": `密碼變更為：${pws}` });
                     }
                 })
             } else {

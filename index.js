@@ -29,8 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 
 app.use('/api', (req, res, next) => {
-    //console.log(req.headers.origin);
-    var allowedOrigins = ['http://127.0.0.1:4200', 'https://family-web-public.vercel.app', 'http://localhost:4200', 'http://127.0.0.1:3000', 'http://localhost:3000'];
+    console.log(req.headers.origin);
+    var allowedOrigins = ['http://127.0.0.1:4200', 'https://family-web-public.vercel.app', 'http://localhost:4200', 'https://fmlyapi.vercel.app', 'http://localhost:3000'];
     var origin = req.headers.origin;
     //console.log(req.headers.origin);
     if (allowedOrigins.indexOf(origin) > -1) {
@@ -43,7 +43,7 @@ app.use('/api', (req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     next();
 });
-
+console.log(apiRouter);
 app.use('/api', apiRouter);
 
 //app.use('/', indexRouter);

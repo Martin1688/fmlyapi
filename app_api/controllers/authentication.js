@@ -31,7 +31,7 @@ const register = (req, res) => {
             //const token = user.generateJwt();
             res
                 .status(200)
-                .json({ "message": "", "data": "" });
+                .json({ "message": "", "data": password });
         }
     })
 };
@@ -62,7 +62,10 @@ const register2 = (req, res, fCode, password) => {
                 .status(409)
                 .json({ "message": user.email + " 已經被使用過了", "data": "" });
         } else {
-            mailobj.mailCreateFamily(req, res, password);
+            //mailobj.mailCreateFamily(req, res, password);
+            return res
+            .status(200)
+            .json({"message": "", "data": password });
         }
     })
 };

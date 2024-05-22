@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const host = process.env.DB_HOST || '127.0.0.1'
     //const dbURL = `mongodb://${host}/Loc8r`;
-const dbURL = "mongodb+srv://martinfb168:pan557333@cluster0.e6gmo.mongodb.net/martinmongodb?retryWrites=true&w=majority";
+const dbURL = "mongodb+srv://martinfb168:pan557333@cluster0.tfyvnjf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";   
+//const dbURL = "mongodb+srv://martinfb168:pan557333@cluster0.e6gmo.mongodb.net/martinmongodb?retryWrites=true&w=majority";
 //const dbURL = "mongodb+srv://Martinmongo:pan557333@cluster0-q9lha.mongodb.net/account_db?retryWrites=true&w=majority";
 const readLine = require('readline');
 
